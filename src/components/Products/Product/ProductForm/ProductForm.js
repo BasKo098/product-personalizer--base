@@ -1,7 +1,7 @@
 import styles from './ProductForm.module.scss'
 import OptionSize from './OptionSize/OptionSize';
 import OptionColor from './OptionColor/OptionColor';
-import Button from './Button/Button';
+import Button from './Button';
 import { useMemo } from 'react';
 
 const ProductForm = (props) => {
