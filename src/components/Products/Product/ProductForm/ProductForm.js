@@ -34,7 +34,7 @@ const ProductForm = (props) => {
         <form onSubmit={(event) => sentOrder(event, props.title, price, props.currentSize, props.currentColor)}>
                 <OptionSize sizes={props.sizes} currentSize={props.currentSize} setCurrentSize={props.setCurrentSize}  />
                 <OptionColor colors={props.colors} currentColor={props.currentColor} setCurrentColor={props.setCurrentColor} />
-                <Button>
+                <Button type="submit">
                     <span className="fa fa-shopping-cart" />
                 </Button>
             </form>
