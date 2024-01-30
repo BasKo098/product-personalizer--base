@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import productsData from '../../data/products';
 import Product from './Product/Product';
+import PropTypes from 'prop-types';
 
 const Products = () => {
   const [products]  = useState(productsData);
@@ -27,6 +28,10 @@ const Products = () => {
         basePrice={products[1].basePrice} />
     </section>*/
   );
+};
+
+Product.propTypes = {
+  products: PropTypes.array.isRequired
 };
 
 export default Products;

@@ -3,13 +3,14 @@ import OptionSize from './OptionSize/OptionSize';
 import OptionColor from './OptionColor/OptionColor';
 import Button from './Button/Button';
 import { useMemo } from 'react';
+import PropTypes from 'prop-types';
 
 const ProductForm = (props) => {
 
     const getPrice = (basePrice, currentSize) => {
         return basePrice + currentSize.additionalPrice
       }
-      
+    
       const price = useMemo(() => {
         return getPrice(props.basePrice, props.currentSize);
       }, [props.basePrice, props.currentSize]);
@@ -40,6 +41,17 @@ const ProductForm = (props) => {
             </form>
             </div>
     )
-}
+};
+
+ProductForm.propTypes = {
+  title: PropTypes.string.isRequired,
+  basePrice: PropTypes.number.isRequired,
+  sizes: PropTypes.array.isRequired,
+  colors: PropTypes.array.isRequired,
+  currentColor: PropTypes.string.isRequired,
+  currentSize: PropTypes.object.isRequired,
+  setCurrentColor: PropTypes.func.isRequired,
+  setCurrentSize: PropTypes.func.isRequired,
+};
 
 export default ProductForm
